@@ -1,0 +1,30 @@
+<!-- pages/classfiy/classfiy.wxml -->
+<view class="par">
+    <view class="item-par">
+        <view 
+        wx:for="{{arr}}" 
+        wx:key="index" 
+        class="{{num==index?'item action':'item'}}"
+        bindtap="btn"
+        data-id="{{index}}"
+        >{{item.text}}
+        </view>
+    </view>
+    <view class="conent">
+        <swiper 
+        id="swiper-par"
+        circular
+        bindchange="change"
+        current="{{num}}">
+            <block wx:for="{{arr}}" wx:key="index">
+                <swiper-item>
+                   <list
+                    item="{{item}}"
+                   arr="{{goods}}"
+                ></list>
+                </swiper-item>
+            </block>
+        </swiper>
+    
+    </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "photo": "../../components/photo/photo"
+  },
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "购物车",
+  "navigationBarTextStyle": "black"
+}

@@ -1,0 +1,34 @@
+/*/* pages/home/home.wxss */
+
+.all-par{
+  margin-left: 20px;
+}
+.par{
+  color: red;
+  font-size: 18px;
+}
+.img{
+  width: 100%;
+  height: 300px;
+}
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  /* margin-top: 200px; */
+}

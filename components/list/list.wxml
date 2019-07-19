@@ -1,0 +1,11 @@
+<!-- components/list/list.wxml -->
+<view class="item-par">
+    <scroll-view scroll-y class="scroll">
+        <view wx:for="{{good}}" wx:key="index" class="img-par">
+            <navigator url="../../pages/good/good">
+                <image src="{{item.img}}" class="img" />
+                <view>{{item.name}}</view>
+            </navigator>
+        </view>
+    </scroll-view>
+</view>

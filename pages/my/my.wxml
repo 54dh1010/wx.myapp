@@ -1,0 +1,86 @@
+<!-- pages/my/my.wxml -->
+<view>
+  <view wx:if="{{show}}">
+    <progress percent="{{num}}" stroke-width="12" show-info />
+  </view>
+  <view wx:if="{{istrue}}" wx:for="{{arr}}" wx:key="index">{{item}}</view>
+  <!-- <view wx:for="{{arr}}" wx:for-item='i' wx:key="index">
+    <view wx:for="{{arr}}" wx:for-item='j' wx:key="index">
+      <view wx:if="{{j<=i}}">
+        {{i}}*{{j}}={{i*j}}
+      </view>
+    </view>
+  </view> -->
+  <view>
+    <input placeholder='aaa' bindinput='change'></input>
+  </view>
+  <view bindtap='par'>
+    <button data-msg="true" type='primary' id="btn" bindtap="tapMe">press Me</button>
+    <view>{{istrue?"我是带参数":"haohaoaho"}}</view>
+  </view>
+  <view wx:if="{{istrue}}" bindtap="getParent">
+    <view bindtap="childOne">
+      <text style="color:red">
+        冒泡事件：当一个组件上的事件被触发后，该事件会向父节点传递。
+            非冒泡事件：当一个组件上的事件被触发后，该事件不会向父节点传递。
+      </text>
+    </view>
+    <view catchtap="childTwo" style="margin-top:20rpx">
+      bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡
+    </view>
+  </view>
+  <view wx:if="{{istrue}}">
+    <template name="user">
+      <view>
+        <text>username===={{username}}</text>
+        <text>age===={{age}}</text>
+        <text>count===={{count}}</text>
+      </view>
+    </template>
+    <template is="user" data="{{...user}}"></template>
+    <import src="/tpls/demon.wxml"></import>
+    <template is="demon" data="{{...demon}}"></template>
+  </view>
+  <button class="btn" type="primary" bindtap="openModal">打开modal</button>
+  <button type="warn" bindtap="openaction">点击拍照 获取头像</button>
+  <import src="/tpls/actionsheet.wxml"></import>
+  <template is="actions" data="{{...action}}"></template>
+  <button type="primary" bindtap="openMyAction">打开自定义 actionsheet</button>
+  <import src="/tpls/login.wxml"></import>
+  <template is="login" data="{{...login}}"></template>
+  <!-- pages/cart/cart'.wxml -->
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{2000}}" duration="{{1000}}">
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.images.large}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view >
+   <audio poster="{{poster}}" name="{{name}}" author="{{author}}" 
+   src="{{src}}" 
+   id="myAudio" controls >
+    <button type="primary" bindtap="audioPlay" >播放</button>
+        <button type="warn" bindtap="audioPause" >暂停</button>
+   </audio>
+  </view>
+
+  <view >
+
+ <video 
+ 
+ id="myVideo" 
+ src="{{vSrc}}" 
+ danmu-list="{{danmuList}}" enable-danmu danmu-btn 
+ bindtimeupdate="videoUpdate"
+ bindplay="videoPlay"
+
+ controls>
+ </video>
+  <view class="btn-area">
+    <button bindtap="bindButtonTap">获取视频</button>
+    <input bindinput="getword" value="{{word}}"/>
+    <button bindtap="bindSendDanmu">发送弹幕</button>
+  </view>
+  </view>
+</view>

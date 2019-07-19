@@ -1,0 +1,42 @@
+<!--pages/home/home.wxml-->
+
+
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+      <text class="user-motto">{{word}}</text>
+  </view>
+   <view >
+      <text >{{num}}</text>
+      <button type="primary" bindtap='addnum'>add num</button>
+  </view>
+
+</view>
+
+<view class='all-par'>
+  <view>
+    <text class="par">{{word}}</text>
+  </view>
+  <text>{{flag?'小程序简单易学':"小程序太难了"}}</text>
+  <view>
+    <switch bindtap='change' checked='{{flag}}'></switch>
+  </view>
+ 
+  <view>
+    <text data-x='{{word}}'> 
+    {{word}}
+    </text>
+  
+  </view>
+</view>
+<view wx:if="{{flag}}">
+    <image src="{{img}}" class='img'></image>
+
+  </view>

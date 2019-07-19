@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "list":"../../components/list/list"
+  },
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "分类",
+  "navigationBarTextStyle": "black"
+}
